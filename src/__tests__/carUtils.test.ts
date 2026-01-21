@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { applyDiscount, calculateTax, calculateTotal, CartItem, } from "../cartUtils";
+import { applyDiscount, calculateTax, calculateTotal, CartItem, } from "../cartUtils.js";
 
 describe("applyDiscount", () => {
   it("applies a percentage discount to a price", () => {
