@@ -10,7 +10,7 @@
     "build": "tsc"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/ClarkCollege-CSE-SoftwareEngineering/lab-2-test-driven-development-DylanRayPulley.git"
   },
   "keywords": [],
