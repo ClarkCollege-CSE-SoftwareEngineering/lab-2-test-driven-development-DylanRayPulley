@@ -1,3 +1,56 @@
+Dylan Pulley
+
+1: 🤔 Reflection Question: Why do we intentionally write a failing test first? How does this relate to what Fowler describes as "state verification"?
+
+Answer : We initially write a failing test because it defines our current behavior we are looking for from the function, this shows us where our current problems are with the code, and where we need to go to fix/ establish the next set of logic for the function. This connects to Fowlers description of state verification as we can verify the current problems and then analyze the functionality as we write the code to make the test pass
+
+
+2: 🤔 Reflection Question: In the mockist vs. classicist debate from Fowler's article, which approach are we using here? Why don't we need any test doubles for this function?
+	
+Answer: This style is an example of the mockist approach of development. We are creating mock tests to make sure the functionality of the program is working without running the program and checking for failures during runtime.
+
+
+3: 🤔 Reflection Question: Notice that we changed the implementation (added rounding), but our tests still pass because we used toBeCloseTo. This is what Kent C. Dodds means by "not testing implementation details." What would a test that does test implementation details look like?
+
+Answer: An implementation test would be checking an exact value of the calculateTax() function looking at how the function performs internally, instead of using the rounded value which is testing the behavior of the function.   
+
+Project description (1-2 sentences)
+
+A shopping cart price calculator project designed around using Test Driven Development. 6 tests need to be written with 2 being originally created, as well as the function calculateTotal needed to be finished. 
+
+How to run tests (commands)
+  npm test 
+  npm run test:coverage
+
+Functions implemented (brief description of each)
+  calculateTotal(): this function takes in an items array made up of CartItems, discountPercent number, and taxRate number, and returns an interface called CartTotals. The function also uses previously set up functions applyDiscount() and calculateTax(). it takes the price, quantity, and isTaxExempt elements of the items added and calculates the total price, discount price, and tax applied.
+
+   Two additional tests were added
+
+    it("returns 0 for all values if CartItem is empty", () => {});
+	
+	    if the cart is empty all values should be 0
+
+    it("accepts a mix of taxexempt and non tax exempt items", () => {});
+
+	    tax exempt items and non tax exempt items should produce a price where tax is calculated correctly for each item
+
+Reflection section answering:
+
+	Q: How did TDD change the way you approached implementing calculateTotal?
+		
+    A: Instead of designing calculateTotal first and making tests around how that worked, i had to instead create tests for how I thought the function would work and then write the function after this.
+
+	Q: Which of Fowler's test double types (dummy, stub, fake, spy, mock) did you need for this lab? Why or why not?
+
+	  A: I dont believe any double types were used as all the testing data was passed directly into the functions and there was no behavior being replaced or simulated  
+
+	Q: What's one thing that would have been different if you wrote the implementation first?
+	
+    A: If i wrote the implementation first i would probably have to make assumptions on what the functionality and edge cases of the function are and would only discover shortcomings of the function after having written them instead of starting with already knowing what I need to write around.
+
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/72n2o9cT)
 # Lab 2: Test-Driven Development with Vitest
 
